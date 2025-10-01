@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brochure - GetPometrix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: url('Fondos/3.jpg') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        .pdf-container {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 90%;
+            width: 100%;
+            max-width: 1000px;
+            height: 80vh;
+        }
+        .pdf-container h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100% - 80px);
+            border: none;
+            border-radius: 8px;
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            color: #000000;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn">← Volver</a>
+    <div class="pdf-container">
+        <h1>Brochure Comercial</h1>
+        <iframe src="documents/brochure.pdf" type="application/pdf"></iframe>
+    </div>
+</body>
+</html>

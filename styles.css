@@ -1,0 +1,596 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F3F4F6;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Secciones a 1920x1080 (altura fija 1080px) */
+.hero, .about, .services, .content-options, .contact {
+    height: 1080px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo-img {
+    max-height: 60px;
+    width: auto;
+}
+
+/* Logo blanco mediante filtros */
+.logo-white {
+    max-width: 320px;
+    height: auto;
+    filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(255,255,255,0.3));
+    margin-bottom: 24px;
+}
+
+/* Hero Section */
+.hero {
+    background: url('Fondos/1.jpg') center/cover no-repeat;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    opacity: 0.9;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+   
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-btn.primary {
+    background: white;
+    color: #000000 !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn.primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+  
+  
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.8);
+   
+}
+
+/* About Section */
+.about {
+    background: url('Fondos/2.jpg') center/cover no-repeat;
+    color: white;
+    padding: 100px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.about .container {
+    position: relative;
+    z-index: 2;
+}
+
+.about-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 60px;
+    opacity: 0.9;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Services Section */
+.services {
+    background: url('Fondos/3.jpg') center/cover no-repeat;
+    color: white;
+    padding: 100px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.services .container {
+    position: relative;
+    z-index: 2;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.service-description {
+    font-size: 1rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Content Options Section */
+.content-options {
+    background: url('Fondos/4.jpg') center/cover no-repeat;
+    padding: 100px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.content-options .container {
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 60px;
+    color: #ffffff;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.option-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.option-icon {
+    color: #667eea;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.option-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.option-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.option-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.option-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Contact Section */
+.contact {
+    background: url('Fondos/5.jpg') center/cover no-repeat;
+    color: white;
+    padding: 100px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.contact .container {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.contact-btn.primary {
+    background: white;
+    color: #000000 !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-btn.primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.contact-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.contact-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.pdf-content {
+    max-width: 1000px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+#videoPlayer {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#pdfViewer {
+    border: none;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 0;
+        min-height: 80vh;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .about, .services, .content-options, .contact {
+        padding: 80px 0;
+    }
+    
+    .about-text, .contact-text {
+        font-size: 1.1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 30px;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .service-card {
+        padding: 30px 20px;
+    }
+    
+    .options-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .option-card {
+        padding: 30px 20px;
+    }
+    
+    .contact-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 0;
+        min-height: 70vh;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .about, .services, .content-options, .contact {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .about-text, .contact-text {
+        font-size: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .service-card, .option-card {
+        padding: 25px 15px;
+    }
+    
+    .cta-btn, .contact-btn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Forzar tipografía blanca en toda la web */
+html, body,
+h1, h2, h3, h4, h5, h6,
+p, span, small, strong, em,
+label, input, textarea, select,
+a, button,
+li, dt, dd,
+.about-text, .service-description, .option-description, .contact-text, .stat-label, .stat-number,
+.option-title, .service-title, .section-title {
+    color: #ffffff !important;
+}
+
+a:hover, a:focus {
+    color: #ffffff !important;
+}
+
