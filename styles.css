@@ -456,20 +456,23 @@ body {
 @media (max-width: 768px) {
     /* Reducir altura de secciones en móvil */
     .hero, .about, .services, .content-options, .contact {
-        height: 60vh;
-        min-height: 500px;
-    }
-    
-    .hero {
+        height: auto;
+        min-height: 60vh;
         padding: 60px 0;
     }
     
+    .hero {
+        padding: 80px 0;
+    }
+    
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 15px;
     }
     
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-bottom: 30px;
     }
     
     .hero-cta {
@@ -483,11 +486,12 @@ body {
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 40px;
     }
     
     .about, .services, .content-options, .contact {
-        padding: 40px 0;
+        padding: 60px 0;
     }
     
     .about-text, .contact-text {
@@ -541,28 +545,32 @@ body {
 @media (max-width: 480px) {
     /* Altura aún más reducida en móviles pequeños */
     .hero, .about, .services, .content-options, .contact {
-        height: 50vh;
-        min-height: 400px;
+        height: auto;
+        min-height: 50vh;
+        padding: 50px 0;
     }
     
     .hero {
-        padding: 40px 0;
+        padding: 60px 0;
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
     }
     
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 25px;
     }
     
     .about, .services, .content-options, .contact {
-        padding: 30px 0;
+        padding: 50px 0;
     }
     
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        margin-bottom: 30px;
     }
     
     .about-text, .contact-text {
