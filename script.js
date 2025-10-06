@@ -124,14 +124,69 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(card);
     });
-    
+
+    // Bloqueo por email: mostrar overlay si no hay email guardado
+    const overlay = document.getElementById('accessOverlay');
+    const form = document.getElementById('accessForm');
+    const emailInput = document.getElementById('accessEmail');
+    const errorBox = document.getElementById('accessError');
+    const submitBtn = document.getElementById('accessSubmit');
+
+    const storedEmail = localStorage.getItem('gp_access_email');
+    if (overlay) {
+        if (!storedEmail) {
+            overlay.style.display = 'block';
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            // Identificar en PostHog si ya lo tenemos
+            if (window.posthog && typeof window.posthog.identify === 'function') {
+                window.posthog.identify(storedEmail);
+                window.posthog.capture('site_unlocked', { method: 'stored', page: location.pathname });
+            }
+        }
+    }
+
+    function isValidEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const value = (emailInput?.value || '').trim();
+            if (!isValidEmail(value)) {
+                errorBox.textContent = 'Ingresá un email válido.';
+                return;
+            }
+            submitBtn.disabled = true;
+            errorBox.textContent = '';
+
+            try {
+                localStorage.setItem('gp_access_email', value);
+            } catch (_) {}
+
+            if (window.posthog && typeof window.posthog.identify === 'function') {
+                window.posthog.identify(value);
+                window.posthog.capture('site_unlocked', { method: 'form', page: location.pathname });
+            }
+
+            // Desbloquear
+            overlay.style.display = 'none';
+            document.documentElement.style.overflow = '';
+        });
+
+        emailInput.addEventListener('input', function() {
+            if (errorBox.textContent) errorBox.textContent = '';
+            submitBtn.disabled = !isValidEmail(emailInput.value.trim());
+        });
+    }
+
     // Animación para el hero content
     const heroContent = document.querySelector('.hero-content');
     if (heroContent) {
         heroContent.style.opacity = '0';
         heroContent.style.transform = 'translateY(50px)';
         heroContent.style.transition = 'opacity 1s ease, transform 1s ease';
-        
         setTimeout(() => {
             heroContent.style.opacity = '1';
             heroContent.style.transform = 'translateY(0)';
