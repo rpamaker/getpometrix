@@ -86,7 +86,14 @@
     (p=t.createElement("script")).type="text/javascript",p.async=!0,p.src="https://cdn.posthog.com/posthog.js",
     (r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"};
     var c="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" ");for(o=0;o<c.length;o++)g(u,c[o]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init("PH_PROJECT_API_KEY",{api_host:"https://app.posthog.com"});
+    posthog.init("phc_KoeEmUl5MUsWIJs7kR13pGR2yY1QuBK6pVSmu4u3gJo",{
+        api_host:"https://us.posthog.com",
+        autocapture:true,
+        capture_pageview:true,
+        session_recording:{
+            maskAllInputs:false
+        }
+    });
     </script>
     <script src="script.js"></script>
 </body>
