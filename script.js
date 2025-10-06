@@ -126,6 +126,31 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	}
 
+	// Retry: esperar a que posthog cargue antes de capturar (hasta 5s)
+	(function ensurePosthogAndCaptureOnce() {
+		if (window.__phPageLoadedSent) return;
+		var attempts = 0;
+		var maxAttempts = 20; // 20 * 250ms = 5s
+		var timer = setInterval(function() {
+			attempts++;
+			var ph = window.posthog;
+			if (ph && typeof ph.capture === 'function') {
+				try {
+					ph.capture('page_loaded', { url: location.href, path: location.pathname, attempt: attempts });
+					window.__phPageLoadedSent = true;
+					clearInterval(timer);
+					console.log('[PostHog] page_loaded enviado');
+				} catch (err) {
+					console.warn('[PostHog] error capturando page_loaded', err);
+				}
+			}
+			if (attempts >= maxAttempts) {
+				clearInterval(timer);
+				console.warn('[PostHog] No se pudo enviar page_loaded: SDK no disponible tras 5s');
+			}
+		}, 250);
+	})();
+
     const cards = document.querySelectorAll('.option-card, .service-card, .stat-item');
     cards.forEach(card => {
         card.style.opacity = '0';
