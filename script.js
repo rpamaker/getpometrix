@@ -204,6 +204,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.posthog.capture('site_unlocked', { method: 'form', page: location.pathname });
             }
 
+            // Notificar por email al primer envío
+            try {
+                var notified = localStorage.getItem('gp_notify_sent');
+                if (!notified) {
+                    fetch('/api/notify', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: value, page: location.href, userAgent: navigator.userAgent })
+                    }).then(function(res){
+                        if (res.ok) try { localStorage.setItem('gp_notify_sent', '1'); } catch (_) {}
+                    }).catch(function(err){ console.warn('notify error', err); });
+                }
+            } catch (err) { console.warn('notify storage error', err); }
+
             // Desbloquear
             overlay.style.display = 'none';
             document.documentElement.style.overflow = '';
