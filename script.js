@@ -117,6 +117,15 @@ const observer = new IntersectionObserver(function(entries) {
 
 // Aplicar animación a las tarjetas cuando se cargue la página
 document.addEventListener('DOMContentLoaded', function() {
+	// Debug PostHog y evento de prueba inicial (temporal)
+	try { localStorage.setItem('ph_debug', 'true'); } catch (_) {}
+	if (window.posthog && typeof window.posthog.set_config === 'function') {
+		window.posthog.set_config({ debug: true });
+		if (typeof window.posthog.capture === 'function') {
+			window.posthog.capture('page_loaded', { url: location.href, path: location.pathname });
+		}
+	}
+
     const cards = document.querySelectorAll('.option-card, .service-card, .stat-item');
     cards.forEach(card => {
         card.style.opacity = '0';
