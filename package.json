@@ -1,0 +1,16 @@
+{
+  "name": "getpometrix",
+  "version": "1.0.0",
+  "description": "GetPometrix - Plataforma de automatización documental",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 8000 -o",
+    "start": "npx http-server -p 8000"
+  },
+  "keywords": ["pdf", "automation", "document"],
+  "author": "GetPometrix",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
