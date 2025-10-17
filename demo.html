@@ -10,54 +10,93 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background: url('Fondos/3.jpg') center/cover no-repeat;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: #1a1a1a;
             margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
         }
+        
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: white;
+            color: #000000 !important;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #000000 !important;
+        }
+        
         .video-container {
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 16px;
-            padding: 20px;
-            max-width: 90%;
-            width: 100%;
-            max-width: 1000px;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: #1a1a1a;
         }
+        
         .video-container h1 {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             color: white;
-            text-align: center;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
         }
+        
         video {
             width: 100%;
-            height: auto;
-            border-radius: 8px;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
         }
-        .back-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: white;
-            color: #000000 !important;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
+        
+        /* Responsive para móviles */
+        @media (max-width: 768px) {
+            .back-btn {
+                top: 15px;
+                left: 15px;
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+            
+            .video-container h1 {
+                top: 15px;
+                font-size: 1.2rem;
+                padding: 8px 16px;
+            }
         }
-        .back-btn:hover {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: white;
-            color: #000000 !important;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
+        
+        @media (max-width: 480px) {
+            .back-btn {
+                top: 10px;
+                left: 10px;
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+            
+            .video-container h1 {
+                top: 10px;
+                font-size: 1rem;
+                padding: 6px 12px;
+            }
         }
     </style>
 </head>
